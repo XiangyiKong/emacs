@@ -1,0 +1,4 @@
+(transient-mark-mode 1)
+(defadvice indent-rigidly (after deactivate-mark-nil activate)
+     (if (called-interactively-p)
+         (setq deactivate-mark nil)))
